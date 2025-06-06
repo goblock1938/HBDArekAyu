@@ -1,0 +1,88 @@
+body {
+  background: linear-gradient(135deg, #ffe0f7 0%, #f8bbd0 100%);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  font-family: "poppins", cursive;
+  color: #e75480; /* warna pink lembut */
+  text-align: center;
+  font-size: 25px;
+}
+p {
+  text-align: center;
+  font-family: "poppins", cursive;
+}
+.container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 240, 246, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(231, 84, 128, 0.15);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1.5px solid rgba(248, 187, 208, 0.4);
+  padding: 32px 24px;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input[type="text"] {
+  padding: 10px 16px;
+  border: 2px solid #f8bbd0;
+  border-radius: 8px;
+  background-color: #fff0f6;
+  font-size: 16px;
+  color: #d81b60;
+  margin-bottom: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #e75480;
+}
+
+button#submit-1,
+button#lanjut,
+button#lanjut-2 {
+  padding: 10px 24px;
+  background-color: #e75480;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(231, 84, 128, 0.15);
+  transition: background 0.3s, transform 0.2s;
+}
+
+button#submit-1:hover,
+button#lanjut:hover,
+button#lanjut-2:hover{
+  background-color: #f8bbd0;
+  transform: translateY(-2px) scale(1.03);
+}
+.sakura {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  animation: sakura-fall linear forwards;
+}
+
+@keyframes sakura-fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}

@@ -53,10 +53,7 @@ function showBirthdayMessage(namaValue) {
 
     // Event tombol kembali
     document.getElementById("back").addEventListener("click", function () {
-      window.close();
-      setTimeout(() => {
-        window.location.href = "https://www.google.com";
-      }, 300);
+      window.location.href = "https://www.google.com";
     });
   }
 }

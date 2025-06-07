@@ -57,21 +57,21 @@ document.getElementById("submit-1").addEventListener("click", function () {
 function createSakura() {
   const sakura = document.createElement("div");
   sakura.classList.add("sakura");
-  sakura.style.left = Math.random() * 100 + "vw";
+  sakura.style.right = Math.random() * 100 + "vw"; // random posisi kanan
+  sakura.style.left = "auto";
   sakura.style.animationDuration = 3 + Math.random() * 7 + "s";
-  // sakura.style
 
-  const rand = Math.random(); // satu nilai random untuk tiga properti
+  const rand = Math.random();
   sakura.style.fontSize = 10 + (1 - rand) * 30 + "px";
   sakura.style.opacity = 1 - rand;
-  sakura.style.filter = `blur(${rand * 7.5}px)`; // efek blur
+  sakura.style.filter = `blur(${rand * 7.5}px)`;
 
   sakura.innerText = "🌸";
   document.body.appendChild(sakura);
 
   setTimeout(() => {
     sakura.remove();
-  }, 10000);
+  }, 15000);
 }
 
-setInterval(createSakura, 350);
+setInterval(createSakura, 150);

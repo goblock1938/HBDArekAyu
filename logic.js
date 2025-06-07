@@ -12,8 +12,8 @@ body.append(container);
 
 // Fungsi untuk menampilkan ucapan ulang tahun
 function showBirthdayMessage(namaValue) {
-  const nickName = ['ratu', 'bilqis']
-  if (namaValue.toLowerCase() === nickName) {
+  const nickName = ['ratu', 'bilqis'];
+  if (nickName.includes(namaValue.toLowerCase())) {
     const html2 = `
   <h2>Selamat Ulang Tahun, ${namaValue}!</h2>
   <img src="https://media.giphy.com/media/rkPsgps6o8HTkwC9vy/giphy.gif" alt="Happy Birthday" style="width: 75%; max-width: 400px; margin-bottom: 20px;">

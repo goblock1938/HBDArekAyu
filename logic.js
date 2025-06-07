@@ -74,4 +74,4 @@ function createSakura() {
   }, 15000);
 }
 
-setInterval(createSakura, 150);
+setInterval(createSakura, 450);

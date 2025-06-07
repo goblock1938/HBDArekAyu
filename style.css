@@ -78,7 +78,7 @@ button#lanjut-2:hover {
 .sakura {
   position: fixed;
   top: -40px;
-  right: -40px; /* dari kanan */
+  right: -75px; /* dari kanan */
   left: auto;
   z-index: 1;
   pointer-events: none;

@@ -12,7 +12,9 @@ body.append(container);
 
 // Fungsi untuk menampilkan ucapan ulang tahun
 function showBirthdayMessage(namaValue) {
-  const html2 = `
+  const nickName = ['ratu', 'bilqis']
+  if (namaValue.toLowerCase() === nickName) {
+    const html2 = `
   <h2>Selamat Ulang Tahun, ${namaValue}!</h2>
   <img src="https://media.giphy.com/media/rkPsgps6o8HTkwC9vy/giphy.gif" alt="Happy Birthday" style="width: 75%; max-width: 400px; margin-bottom: 20px;">
   <p>Semoga hari kamu menyenangkan dan penuh kebahagiaan 🎉</p>
@@ -40,6 +42,20 @@ function showBirthdayMessage(namaValue) {
       container.innerHTML = html4;
     });
   });
+  } else {
+    const html2 = `
+  <h2>ini web bukan buat lu KOCAK!</h2>
+  <img src="https://media.giphy.com/media/OOezqqxPB8aJ2/giphy.gif" alt="Not For You" style="width: 75%; max-width: 400px; margin-bottom: 20px;">
+  <p>ini web buat orang yang special, bukan buat lu yang cuma numpang lewat</p>
+  <button id="back">BALEK LU SONO!</button>
+  `;
+    container.innerHTML = html2;
+
+    // Event tombol kembali
+    document.getElementById("back").addEventListener("click", function () {
+      window.close();
+    });
+  }
 }
 
 // Event submit

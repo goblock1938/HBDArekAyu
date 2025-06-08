@@ -82,11 +82,9 @@ function showBirthdayMessage(namaValue) {
             }, 5000)
           });
           acak.addEventListener("click", function() {
-            acak.style.position = 'fixed';
-            // Pastikan parent-nya relative agar acak tetap di dalam container
-            // container.style.position = 'relative';
-            acak.style.right = `calc(${10 + Math.random() * 70}vw - 40px)`;
-            acak.style.bottom = `calc(${10 + math.random() * 70}vh - 40px)`;
+            acak.style.position = 'absolute';
+            acak.style.right = `calc(${10 + Math.random() * 40}vw - 40px)`;
+            acak.style.bottom = `calc(${10 + math.random() * 40}vh - 40px)`;
           });
         }
       )

@@ -1,6 +1,6 @@
 const body = document.body;
 const html1 = `<h2>isi nama kamu dulu yah💕</h2>
-    <input type="text" id="text-nama" placeholder="Masukkan nama kamu..." />
+    <input type="text" id="text-nama" placeholder="nama panggilan aja..." />
     <button type="button" id="submit-1">Submit</button>
     <div id="birthday-message" style="margin-top: 20px"></div>`;
 
@@ -12,7 +12,7 @@ body.append(container);
 
 // Fungsi untuk menampilkan ucapan ulang tahun
 function showBirthdayMessage(namaValue) {
-  const nickName = ['ratu', 'bilqis'];
+  const nickName = ['ratu', 'bilqis', 'agustin', 'putri', 'nahar'];
   if (!nickName.includes(namaValue.toLowerCase())) {
     const html2 = `
   <h2>ini web bukan buat lu KOCAK!</h2>
@@ -30,7 +30,7 @@ function showBirthdayMessage(namaValue) {
     // Timeout: redirect saja, tanpa window.close()
     setTimeout(() => {
       window.close();
-    }, 10000); // 10 detik biar pesan sempat tampil
+    }, 7500); // 7.5 detik biar pesan sempat tampil
   } else {
     const html2 = `
   <h2>Selamat Ulang Tahun, ${namaValue}!</h2>
@@ -44,7 +44,7 @@ function showBirthdayMessage(namaValue) {
     document.getElementById("lanjut").addEventListener("click", function () {
       const html3 = `
       <h2>Terima kasih sudah pernah mengisi hari-hariku, ${namaValue}!</h2>
-      <img src="https://media.giphy.com/media/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="Happy Birthday" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
+      <img src="https://media.giphy.com/media/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="maacih" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
       <p>ini adalah projek kecil yang pernah aku singgung di komunitasku, ini udah aku rencanain dari awal kelas 12 dan gk nyangka bisa terealisasi</p>
       <button id="lanjut-2">lanjut</button>
       `;
@@ -55,8 +55,41 @@ function showBirthdayMessage(namaValue) {
         <h2>makasih ya, semoga kita dipertemukan kembali, ${namaValue}!</h2>
         <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Thank You" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
         <p>aku disini memang rindu sama kamu, tapi setidaknya aku sudah tidak mencarimu karena aku takut mengganggu kamu<br>semangat kuliahnya😇</p>
+        <button id='kado'>terakhir nich</button>
         `;
         container.innerHTML = html4;
+        document.getElementById('kado').addEventListener("click", function() {
+          const html5 = `
+          <h2>sebetulnya aku udah nyiapin kado buat kamu ${namaValue}!</h2>
+          <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
+          <p>boleh gk aku kasih kado ke kamu😇</p>
+          <div>
+            <button id='terima'>MAU😊❤️</button>
+            <button id='tolak'>gk mau💔</button>
+          </div>
+          `
+          container.innerHTML = html5
+          const acak = document.getElementById('tolak')
+          document.getElementById('terima').addEventListener("click", function() {
+            const html6 = `
+            <h2>YAY! makasih ya ${namaValue} udah mau terima kado aku!</h2>
+            <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Terima Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
+            <p>kado ini adalah sebuah projek kecil yang aku buat untuk kamu, semoga kamu suka</p>
+            `;
+            container.innerHTML = html6;
+            setTimeout(() => {
+              window.close();
+            }, 5000)
+          });
+          acak.addEventListener("click", function() {
+            acak.style.position = 'absolute';
+            // Pastikan parent-nya relative agar acak tetap di dalam container
+            container.style.position = 'relative';
+            acak.style.right = 10 + Math.random() * 70 + 'vw';
+            acak.style.top = 10 + Math.random() * 70 + 'vh';
+          });
+        }
+      )
       });
     });
   }

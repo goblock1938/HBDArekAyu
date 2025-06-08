@@ -56,19 +56,20 @@ input[type="text"]:focus {
 
 button {
   padding: 10px 24px;
-  background-color: #e75480;
-  color: #fff;
-  border: none;
+  background-color: #fff; /* putih */
+  color: #e75480; /* pink tua */
+  border: 2px solid #e75480;
   border-radius: 8px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(231, 84, 128, 0.15);
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s, transform 0.2s, color 0.3s;
 }
 
 button:hover {
-  background-color: #f8bbd0;
+  background-color: #e75480; /* pink muda saat hover */
+  color: #fff; /* teks putih saat hover */
   transform: translateY(-2px) scale(1.03);
 }
 .sakura {

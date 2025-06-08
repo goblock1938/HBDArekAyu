@@ -3,14 +3,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  min-height: 100vh;
+  height: calc(100vh - 40px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-h2 {
+h3 {
   font-family: "poppins", cursive;
   color: #e75480; /* warna pink lembut */
   text-align: center;
@@ -29,7 +29,7 @@ p {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   border: 1.5px solid rgba(248, 187, 208, 0.4);
-  padding: 32px 24px;
+  padding: 16px 12px;
   max-width: 300px;
   width: 100%;
   display: flex;

@@ -1,5 +1,5 @@
 const body = document.body;
-const html1 = `<h2>isi nama kamu dulu yah💕</h2>
+const html1 = `<h3>isi nama kamu dulu yah💕</h3>
     <input type="text" id="text-nama" placeholder="nama panggilan aja..." />
     <button type="button" id="submit-1">Submit</button>
     <div id="birthday-message" style="margin-top: 20px"></div>`;
@@ -15,7 +15,7 @@ function showBirthdayMessage(namaValue) {
   const nickName = ['ratu', 'bilqis', 'agustin', 'putri', 'nahar'];
   if (!nickName.includes(namaValue.toLowerCase())) {
     const html2 = `
-  <h2>ini web bukan buat lu KOCAK!</h2>
+  <h3>ini web bukan buat lu KOCAK!</h3>
   <img src="https://media.giphy.com/media/OOezqqxPB8aJ2/giphy.gif" alt="Not For You" style="width: 75%; max-width: 400px; margin-bottom: 20px;">
   <p>ini web buat orang yang special, bukan buat lu yang cuma numpang lewat</p>
   <button id="back">BALEK LU SONO!</button>
@@ -33,7 +33,7 @@ function showBirthdayMessage(namaValue) {
     }, 7500); // 7.5 detik biar pesan sempat tampil
   } else {
     const html2 = `
-  <h2>Selamat Ulang Tahun, ${namaValue}!</h2>
+  <h3>Selamat Ulang Tahun, ${namaValue}!</h3>
   <img src="https://media.giphy.com/media/rkPsgps6o8HTkwC9vy/giphy.gif" alt="Happy Birthday" style="width: 75%; max-width: 400px; margin-bottom: 20px;">
   <p>Semoga hari kamu menyenangkan dan penuh kebahagiaan 🎉</p>
   <button id="lanjut">lanjut</button>
@@ -43,7 +43,7 @@ function showBirthdayMessage(namaValue) {
     // Event tombol lanjut
     document.getElementById("lanjut").addEventListener("click", function () {
       const html3 = `
-      <h2>Terima kasih sudah pernah mengisi hari-hariku, ${namaValue}!</h2>
+      <h3>Terima kasih sudah pernah mengisi hari-hariku, ${namaValue}!</h3>
       <img src="https://media.giphy.com/media/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="maacih" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
       <p>ini adalah projek kecil yang pernah aku singgung di komunitasku, ini udah aku rencanain dari awal kelas 12 dan gk nyangka bisa terealisasi</p>
       <button id="lanjut-2">lanjut</button>
@@ -52,7 +52,7 @@ function showBirthdayMessage(namaValue) {
       // Event tombol lanjut-2
       document.getElementById("lanjut-2").addEventListener("click", function () {
         const html4 = `
-        <h2>makasih ya, semoga kita dipertemukan kembali, ${namaValue}!</h2>
+        <h3>makasih ya, semoga kita dipertemukan kembali, ${namaValue}!</h3>
         <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Thank You" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
         <p>aku disini memang rindu sama kamu, tapi setidaknya aku sudah tidak mencarimu karena aku takut mengganggu kamu<br>semangat kuliahnya😇</p>
         <button id='kado'>terakhir nich</button>
@@ -60,7 +60,7 @@ function showBirthdayMessage(namaValue) {
         container.innerHTML = html4;
         document.getElementById('kado').addEventListener("click", function() {
           const html5 = `
-          <h2>sebetulnya aku udah nyiapin kado buat kamu ${namaValue}!</h2>
+          <h3>sebetulnya aku udah nyiapin kado buat kamu ${namaValue}!</h3>
           <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
           <p>boleh gk aku kasih kado ke kamu😇</p>
           <div>
@@ -82,11 +82,11 @@ function showBirthdayMessage(namaValue) {
             }, 5000)
           });
           acak.addEventListener("click", function() {
-            acak.style.position = 'absolute';
+            acak.style.position = 'fixed';
             // Pastikan parent-nya relative agar acak tetap di dalam container
-            container.style.position = 'relative';
-            acak.style.right = 10 + Math.random() * 70 + 'vw';
-            acak.style.top = 10 + Math.random() * 70 + 'vh';
+            // container.style.position = 'relative';
+            acak.style.right = `calc(${10 + Math.random() * 70}vw - 40px)`;
+            acak.style.bottom = `calc(${10 + math.random() * 70}vh - 40px)`;
           });
         }
       )

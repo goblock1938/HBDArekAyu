@@ -12,8 +12,8 @@ body.append(container);
 
 // Fungsi untuk menampilkan ucapan ulang tahun
 function showBirthdayMessage(namaValue) {
-  const nickName = ['ratu', 'bilqis', 'agustin', 'putri', 'nahar'];
-  if (!nickName.includes(namaValue.toLowerCase())) {
+  const nickName = ["ratu", "bilqis", "agustin", "putri", "nahar"];
+  if (!nickName.includes(namaValue.trim().toLowerCase())) {
     const html2 = `
   <h3>ini web bukan buat lu KOCAK!</h3>
   <img src="https://media.giphy.com/media/OOezqqxPB8aJ2/giphy.gif" alt="Not For You" style="width: 75%; max-width: 400px; margin-bottom: 20px;">
@@ -50,16 +50,20 @@ function showBirthdayMessage(namaValue) {
       `;
       container.innerHTML = html3;
       // Event tombol lanjut-2
-      document.getElementById("lanjut-2").addEventListener("click", function () {
-        const html4 = `
+      document
+        .getElementById("lanjut-2")
+        .addEventListener("click", function () {
+          const html4 = `
         <h3>makasih ya, semoga kita dipertemukan kembali, ${namaValue}!</h3>
         <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Thank You" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
         <p>aku disini memang rindu sama kamu, tapi setidaknya aku sudah tidak mencarimu karena aku takut mengganggu kamu<br>semangat kuliahnya😇</p>
         <button id='kado'>terakhir nich</button>
         `;
-        container.innerHTML = html4;
-        document.getElementById('kado').addEventListener("click", function() {
-          const html5 = `
+          container.innerHTML = html4;
+          document
+            .getElementById("kado")
+            .addEventListener("click", function () {
+              const html5 = `
           <h3>sebetulnya aku udah nyiapin kado buat kamu ${namaValue}!</h3>
           <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
           <p>boleh gk aku kasih kado ke kamu😇</p>
@@ -67,28 +71,30 @@ function showBirthdayMessage(namaValue) {
             <button id='terima'>MAU😊❤️</button>
             <button id='tolak'>gk mau💔</button>
           </div>
-          `
-          container.innerHTML = html5
-          const acak = document.getElementById('tolak')
-          document.getElementById('terima').addEventListener("click", function() {
-            const html6 = `
+          `;
+              container.innerHTML = html5;
+              const acak = document.getElementById("tolak");
+              document
+                .getElementById("terima")
+                .addEventListener("click", function () {
+                  const html6 = `
             <h2>YAY! makasih ya ${namaValue} udah mau terima kado aku!</h2>
             <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Terima Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
-            <p>kado ini adalah sebuah projek kecil yang aku buat untuk kamu, semoga kamu suka</p>
+            <p>kalo kerumah kamu pastinya kamu ngelarang sih, jadi aku maunya ketemuan, btw ketemuan dimana nih hehe<br>
+            semoga kamu suka</p>
             `;
-            container.innerHTML = html6;
-            setTimeout(() => {
-              window.close();
-            }, 5000)
-          });
-          acak.addEventListener("click", function() {
-            acak.style.position = 'absolute';
-            acak.style.right = `calc(${10 + Math.random() * 40}vw - 40px)`;
-            acak.style.bottom = `calc(${10 + math.random() * 40}vh - 40px)`;
-          });
-        }
-      )
-      });
+                  container.innerHTML = html6;
+                  setTimeout(() => {
+                    window.close();
+                  }, 5000);
+                });
+              acak.addEventListener("click", function () {
+                acak.style.position = "absolute";
+                acak.style.right = `calc(${10 + Math.random() * 40}vw - 40px)`;
+                acak.style.bottom = `calc(${10 + math.random() * 40}vh - 40px)`;
+              });
+            });
+        });
     });
   }
 }

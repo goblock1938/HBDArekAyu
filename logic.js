@@ -69,11 +69,18 @@ function showBirthdayMessage(namaValue) {
           <p>boleh gk aku kasih kado ke kamu😇</p>
           <div>
             <button id='terima'>MAU😊❤️</button>
-            <button id='tolak'>gk mau💔</button>
+            <button id='tolak'></button>
           </div>
           `;
               container.innerHTML = html5;
               const acak = document.getElementById("tolak");
+              acak.textContent = "gk mau💔";
+              const contentText = [
+                "jangan tolak dong😢",
+                "kalo gk mau, aku sedih😭",
+                "aku udah nyiapin ini loh😔",
+                "aku udah habis duit dan waktu buat ini😭"
+              ];
               acak.style.position = "relative";
               document
                 .getElementById("terima")
@@ -99,7 +106,10 @@ function showBirthdayMessage(namaValue) {
                 acak.style.top = `${5 + Math.random() * 55}vh`;
                 acak.style.bottom = "auto";
                 acak.style.right = "auto";
-                // Jangan ubah .top jika ingin tetap di posisi awal
+                const randomIndex = Math.floor(
+                  Math.random() * contentText.length
+                );
+                acak.textContent = contentText[randomIndex];
               });
             });
         });

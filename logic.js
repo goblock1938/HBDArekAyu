@@ -79,7 +79,8 @@ function showBirthdayMessage(namaValue) {
                 "jangan tolak dong😢",
                 "kalo gk mau, aku sedih😭",
                 "aku udah nyiapin ini loh😔",
-                "aku udah habis duit dan waktu buat ini😭"
+                "suka gk suka, ini kado buat kamu",
+                "kalo gk mau, dimau-in aja😅",
               ];
               acak.style.position = "relative";
               document
@@ -90,20 +91,20 @@ function showBirthdayMessage(namaValue) {
             <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Terima Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
             <p>kalo kerumah kamu pastinya kamu ngelarang sih, jadi aku maunya ketemuan, btw ketemuan dimana nih hehe<br>
             webnya bakal hilang sendiri dalam waktu 15 detik<br>
-            semoga kamu suka</p>
+            semoga kamu suka, <br>💕Love You❤️</p>
             `;
                   container.innerHTML = html6;
+                  const nomor = "6282132116116";
+                  const pesan = encodeURIComponent("kamu nyiapin hadiah apa");
+                  const waLink = `https://wa.me/${nomor}?text=${pesan}`;
                   setTimeout(() => {
-                    window.close();
-                  }, 15000);
+                    window.location.href = waLink;
+                  },15000);
                 });
               acak.addEventListener("click", function () {
                 acak.style.position = "fixed";
-                const btnWidth = acak.offsetWidth;
-                const maxLeft = window.innerWidth - btnWidth;
-                const left = Math.random() * maxLeft;
-                acak.style.left = `${left}px`;
-                acak.style.top = `${5 + Math.random() * 55}vh`;
+                acak.style.left = `${5 + Math.random() * 75}vw`;
+                acak.style.top = `${5 + Math.random() * 65}vh`;
                 acak.style.bottom = "auto";
                 acak.style.right = "auto";
                 const randomIndex = Math.floor(
@@ -132,14 +133,13 @@ document.getElementById("submit-1").addEventListener("click", function () {
 function createSakura() {
   const sakura = document.createElement("div");
   sakura.classList.add("sakura");
-  sakura.style.right = Math.random() * 100 + "vw"; // random posisi kanan
-  sakura.style.left = "auto";
   sakura.style.animationDuration = 3 + Math.random() * 7 + "s";
 
   const rand = Math.random();
   sakura.style.fontSize = 10 + (1 - rand) * 30 + "px";
   sakura.style.opacity = 1 - rand;
   sakura.style.filter = `blur(${rand * 7.5}px)`;
+  sakura.style.left = Math.random() * 100 + "vw";
 
   sakura.innerText = "🌸";
   document.body.appendChild(sakura);

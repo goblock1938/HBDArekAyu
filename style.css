@@ -75,8 +75,6 @@ button:hover {
 .sakura {
   position: fixed;
   top: -40px;
-  right: -75px; /* dari kanan */
-  left: auto;
   z-index: 1;
   pointer-events: none;
   animation: sakura-fall-diagonal linear forwards;
@@ -84,7 +82,7 @@ button:hover {
 
 @keyframes sakura-fall-diagonal {
   to {
-    transform: translate(-25vw, 110vh) rotate(360deg);
+    transform: translate(0, 110vh) rotate(360deg);
   }
 }
 

@@ -95,7 +95,7 @@ function showBirthdayMessage(namaValue) {
             `;
                   container.innerHTML = html6;
                   const nomor = "6282132116116";
-                  const pesan = encodeURIComponent("kamu nyiapin hadiah apa");
+                  const pesan = encodeURIComponent("ini adalah caraku memberi kejutan kepadamu, sekaligus membuat project kecil agar aku bisa belajar mandiri. makasih ya waktunya untuk webku yang tidak seberapa ini, semoga kamu suka!💕");
                   const waLink = `https://wa.me/${nomor}?text=${pesan}`;
                   setTimeout(() => {
                     window.location.href = waLink;

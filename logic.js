@@ -79,8 +79,9 @@ function showBirthdayMessage(namaValue) {
                 "jangan tolak dong😢",
                 "kalo gk mau, aku sedih😭",
                 "aku udah nyiapin ini loh😔",
-                "suka gk suka, ini kado buat kamu",
-                "kalo gk mau, dimau-in aja😅",
+                "suka gk suka, ini kado buat kamu🥰",
+                "ini tuh special buat kamu loh🥰",
+                "ini untuk kamu, bukan orang lain😥",
               ];
               acak.style.position = "relative";
               document
@@ -95,11 +96,13 @@ function showBirthdayMessage(namaValue) {
             `;
                   container.innerHTML = html6;
                   const nomor = "6282132116116";
-                  const pesan = encodeURIComponent("ini adalah caraku memberi kejutan kepadamu, sekaligus membuat project kecil agar aku bisa belajar mandiri. makasih ya waktunya untuk webku yang tidak seberapa ini, semoga kamu suka!💕");
+                  const pesan = encodeURIComponent(
+                    "ini adalah caraku memberi kejutan kepadamu, sekaligus membuat project kecil agar aku bisa belajar mandiri. makasih ya waktunya untuk webku yang tidak seberapa ini, semoga kamu suka!💕"
+                  );
                   const waLink = `https://wa.me/${nomor}?text=${pesan}`;
                   setTimeout(() => {
                     window.location.href = waLink;
-                  },15000);
+                  }, 15000);
                 });
               acak.addEventListener("click", function () {
                 acak.style.position = "fixed";

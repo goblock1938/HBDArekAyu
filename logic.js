@@ -195,8 +195,8 @@ function showBirthdayMessage(namaValue) {
                 });
               acak.addEventListener("click", function () {
                 acak.style.position = "absolute";
-                acak.style.left = `${-65 + Math.random() * 120}vw`;
-                acak.style.top = `${-65 + Math.random() * 110}vh`;
+                acak.style.left = `${Math.random() * 60}vw`;
+                acak.style.top = `${-15 + Math.random() * 90}vh`;
                 acak.style.bottom = "auto";
                 acak.style.right = "auto";
                 const randomIndex = Math.floor(

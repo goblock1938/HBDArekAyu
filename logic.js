@@ -36,7 +36,7 @@ function showBirthdayMessage(namaValue) {
   <h3>Selamat Ulang Tahun, ${namaValue}!</h3>
   <div class='foto'>
   <img id="foto-bilqis" src="bilqis.png" alt="Bilqis" style="width: 75%; max-width: 400px; margin-bottom: 20px; border-radius: 16px; z-index: 1; position: relative;">
-  <canvas id="kembang-api" width="400" height="400" style="position: absolute; left: 0; top: 0; pointer-events: none; z-index: 2;"></canvas>
+  <canvas id="kembang-api" width="225" height="281.25" style="position: absolute; left: 60px; top: 0; pointer-events: none; z-index: 2;"></canvas>
 </div>
   <p>Semoga hari kamu menyenangkan dan penuh kebahagiaan 🎉</p>
   <button id="lanjut">lanjut</button>
@@ -195,8 +195,8 @@ function showBirthdayMessage(namaValue) {
                 });
               acak.addEventListener("click", function () {
                 acak.style.position = "absolute";
-                acak.style.left = `${Math.random() * 60}vw`;
-                acak.style.top = `${-15 + Math.random() * 90}vh`;
+                acak.style.left = `${Math.random() * 50}vw`;
+                acak.style.top = `${-15 + Math.random() * 70}vh`;
                 acak.style.bottom = "auto";
                 acak.style.right = "auto";
                 const randomIndex = Math.floor(

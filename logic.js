@@ -34,12 +34,94 @@ function showBirthdayMessage(namaValue) {
   } else {
     const html2 = `
   <h3>Selamat Ulang Tahun, ${namaValue}!</h3>
-  <img src="https://media.giphy.com/media/rkPsgps6o8HTkwC9vy/giphy.gif" alt="Happy Birthday" style="width: 75%; max-width: 400px; margin-bottom: 20px;">
+  <div class='foto'>
+  <img id="foto-bilqis" src="bilqis.png" alt="Bilqis" style="width: 75%; max-width: 400px; margin-bottom: 20px; border-radius: 16px; z-index: 1; position: relative;">
+  <canvas id="kembang-api" width="400" height="400" style="position: absolute; left: 0; top: 0; pointer-events: none; z-index: 2;"></canvas>
+</div>
   <p>Semoga hari kamu menyenangkan dan penuh kebahagiaan 🎉</p>
   <button id="lanjut">lanjut</button>
   `;
     container.innerHTML = html2;
 
+    const positions = [
+      [50, 50],    // kiri atas
+      [200, 50],   // tengah atas
+      [350, 50],   // kanan atas
+    ];
+
+    let currentIndex = 0;
+
+    function randomColor() {
+      const colors = ['#ffec00', '#ff0080', '#00eaff', '#ff5e00', '#00ff85', '#ff00e6'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function Firework(x, y) {
+      this.x = x;
+      this.y = y;
+      this.particles = [];
+      for (let i = 0; i < 24; i++) {
+        const angle = (i / 24) * 2 * Math.PI;
+        const speed = Math.random() * 2 + 2;
+        this.particles.push({
+          x: x,
+          y: y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          alpha: 1,
+          color: randomColor()
+        });
+      }
+    }
+
+    Firework.prototype.update = function () {
+      this.particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.03;
+        p.alpha -= 0.015;
+      });
+      this.particles = this.particles.filter(p => p.alpha > 0);
+    };
+
+    Firework.prototype.draw = function (ctx) {
+      this.particles.forEach(p => {
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 3, 0, 2 * Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+        ctx.restore();
+      });
+    };
+
+    const canvas = document.getElementById('kembang-api');
+    const ctx = canvas.getContext('2d');
+    let fireworks = [];
+
+    function spawnFireworkRandomTop() {
+      // X acak di bagian atas canvas, Y tetap di atas (misal 40px)
+      const x = Math.random() * canvas.width;
+      const y = 40 + Math.random() * 20; // sedikit variasi vertikal di atas
+      fireworks.push(new Firework(x, y));
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      fireworks.forEach(fw => {
+        fw.update();
+        fw.draw(ctx);
+      });
+      fireworks = fireworks.filter(fw => fw.particles.length > 0);
+      requestAnimationFrame(animate);
+    }
+
+    // Munculkan kembang api secara acak di atas setiap 1 detik
+    setInterval(spawnFireworkRandomTop, 1500);
+    animate();
+    setInterval(spawnFireworkRandomTop, 1000);
+    animate();
     // Event tombol lanjut
     document.getElementById("lanjut").addEventListener("click", function () {
       const html3 = `

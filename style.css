@@ -38,6 +38,12 @@ p {
   opacity: 0;
   animation: fade-in 0.75s ease-in-out forwards;
 }
+.foto {
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 input[type="text"] {
   padding: 10px 16px;
   border: 2px solid #f8bbd0;

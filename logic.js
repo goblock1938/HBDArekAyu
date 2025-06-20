@@ -194,9 +194,9 @@ function showBirthdayMessage(namaValue) {
                   }, 15000);
                 });
               acak.addEventListener("click", function () {
-                acak.style.position = "fixed";
-                acak.style.left = `${-30 + Math.random() * 65}vw`;
-                acak.style.top = `${-30 + Math.random() * 55}vh`;
+                acak.style.position = "absolute";
+                acak.style.left = `${-45 + Math.random() * 110}vw`;
+                acak.style.top = `${-45 + Math.random() * 100}vh`;
                 acak.style.bottom = "auto";
                 acak.style.right = "auto";
                 const randomIndex = Math.floor(

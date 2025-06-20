@@ -44,15 +44,22 @@ function showBirthdayMessage(namaValue) {
     container.innerHTML = html2;
 
     const positions = [
-      [50, 50],    // kiri atas
-      [200, 50],   // tengah atas
-      [350, 50],   // kanan atas
+      [50, 50], // kiri atas
+      [200, 50], // tengah atas
+      [350, 50], // kanan atas
     ];
 
     let currentIndex = 0;
 
     function randomColor() {
-      const colors = ['#ffec00', '#ff0080', '#00eaff', '#ff5e00', '#00ff85', '#ff00e6'];
+      const colors = [
+        "#ffec00",
+        "#ff0080",
+        "#00eaff",
+        "#ff5e00",
+        "#00ff85",
+        "#ff00e6",
+      ];
       return colors[Math.floor(Math.random() * colors.length)];
     }
 
@@ -69,23 +76,23 @@ function showBirthdayMessage(namaValue) {
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
           alpha: 1,
-          color: randomColor()
+          color: randomColor(),
         });
       }
     }
 
     Firework.prototype.update = function () {
-      this.particles.forEach(p => {
+      this.particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
         p.vy += 0.03;
         p.alpha -= 0.015;
       });
-      this.particles = this.particles.filter(p => p.alpha > 0);
+      this.particles = this.particles.filter((p) => p.alpha > 0);
     };
 
     Firework.prototype.draw = function (ctx) {
-      this.particles.forEach(p => {
+      this.particles.forEach((p) => {
         ctx.save();
         ctx.globalAlpha = p.alpha;
         ctx.beginPath();
@@ -96,8 +103,8 @@ function showBirthdayMessage(namaValue) {
       });
     };
 
-    const canvas = document.getElementById('kembang-api');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById("kembang-api");
+    const ctx = canvas.getContext("2d");
     let fireworks = [];
 
     function spawnFireworkRandomTop() {
@@ -109,11 +116,11 @@ function showBirthdayMessage(namaValue) {
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      fireworks.forEach(fw => {
+      fireworks.forEach((fw) => {
         fw.update();
         fw.draw(ctx);
       });
-      fireworks = fireworks.filter(fw => fw.particles.length > 0);
+      fireworks = fireworks.filter((fw) => fw.particles.length > 0);
       requestAnimationFrame(animate);
     }
 
@@ -188,8 +195,8 @@ function showBirthdayMessage(namaValue) {
                 });
               acak.addEventListener("click", function () {
                 acak.style.position = "fixed";
-                acak.style.left = `${5 + Math.random() * 75}vw`;
-                acak.style.top = `${5 + Math.random() * 65}vh`;
+                acak.style.left = `${Math.random() * 65}vw`;
+                acak.style.top = `${Math.random() * 55}vh`;
                 acak.style.bottom = "auto";
                 acak.style.right = "auto";
                 const randomIndex = Math.floor(

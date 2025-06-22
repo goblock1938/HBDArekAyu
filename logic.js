@@ -36,7 +36,8 @@ function showBirthdayMessage(namaValue) {
   <h3>Selamat Ulang Tahun, ${namaValue}!</h3>
   <div class='foto'>
   <img id="foto-bilqis" src="bilqis.png" alt="Bilqis" style="width: 75%; max-width: 400px; margin-bottom: 20px; border-radius: 16px; z-index: 1; position: relative;">
-  <canvas id="kembang-api" width="225" height="281.25" style="position: absolute; left: 60px; top: 0; pointer-events: none; z-index: 2;"></canvas>
+  <canvas id="kembang-api" width="225" height="281.25" style="position: absolute; left: 45px; top: 0; pointer-events: none; z-index: 2;"></canvas>
+  <img src="https://media.giphy.com/media/xzJournBeerRRGJgpg/giphy.gif" alt="ultah" style="position: absolute; width: 65%; margin-bottom: 20px; z-index:3 ; top:125px ;">
 </div>
   <p>Semoga hari kamu menyenangkan dan penuh kebahagiaan 🎉</p>
   <button id="lanjut">lanjut</button>
@@ -154,7 +155,7 @@ function showBirthdayMessage(namaValue) {
             .addEventListener("click", function () {
               const html5 = `
           <h3>sebetulnya aku udah nyiapin kado buat kamu ${namaValue}!</h3>
-          <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
+          <img src="https://media.giphy.com/media/Q5KYoopzomTgsvvn1r/giphy.gif" alt="Kado" style="width: 75%; margin-bottom: 20px;">
           <p>boleh gk aku kasih kado ke kamu😇</p>
           <div>
             <button id='terima'>MAU😊❤️</button>
@@ -178,7 +179,7 @@ function showBirthdayMessage(namaValue) {
                 .addEventListener("click", function () {
                   const html6 = `
                   <h3>YAY! makasih ya ${namaValue} udah mau terima kado aku!</h3>
-            <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Terima Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
+            <img src="https://media.giphy.com/media/9Y1LEFKsbbP4hrLgV3/giphy.gif" alt="Terima Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
             <p>kalo kerumah kamu pastinya kamu ngelarang sih, jadi aku maunya ketemuan, btw ketemuan dimana nih hehe<br>
             webnya bakal hilang sendiri dalam waktu 15 detik<br>
             semoga kamu suka, <br>💕Love You❤️</p>

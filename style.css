@@ -43,6 +43,7 @@ p {
   display:flex;
   justify-content:center;
   align-items:center;
+  overflow: hidden;
 }
 input[type="text"] {
   padding: 10px 16px;

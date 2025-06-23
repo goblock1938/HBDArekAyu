@@ -35,9 +35,9 @@ function showBirthdayMessage(namaValue) {
     const html2 = `
   <h3>Selamat Ulang Tahun, ${namaValue}!</h3>
   <div class='foto'>
-  <img id="foto-bilqis" src="bilqis.png" alt="Bilqis" style="width: 75%; max-width: 400px; margin-bottom: 20px; border-radius: 16px; z-index: 1; position: relative;">
+  <img id="foto-bilqis" src="bilqis.png" alt="Bilqis" style="width: 75%; max-width: 400px; border-radius: 16px; z-index: 1; position: relative;">
   <canvas id="kembang-api" width="225" height="281.25" style="position: absolute; left: 25px; top: 0; pointer-events: none; z-index: 2;"></canvas>
-  <img src="https://media.giphy.com/media/xzJournBeerRRGJgpg/giphy.gif" alt="ultah" style="position: absolute; width: 65%; margin-bottom: 20px; z-index:3 ; top:150px ;">
+  <img src="https://media.giphy.com/media/xzJournBeerRRGJgpg/giphy.gif" alt="ultah" style="position: absolute; width: 65%; z-index:3 ; bottom:-17.5px ;">
 </div>
   <p>Semoga hari kamu menyenangkan dan penuh kebahagiaan 🎉</p>
   <button id="lanjut">lanjut</button>
@@ -116,9 +116,7 @@ function showBirthdayMessage(namaValue) {
     }
 
     function animate() {
-      ctx.fillStyle = "rgba(255,255,255,0.25)"; // sangat tipis, jejak tetap ada, foto tetap terlihat
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       fireworks.forEach((fw) => {
         fw.update();
         fw.draw(ctx);

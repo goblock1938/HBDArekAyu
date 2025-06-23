@@ -36,8 +36,8 @@ function showBirthdayMessage(namaValue) {
   <h3>Selamat Ulang Tahun, ${namaValue}!</h3>
   <div class='foto'>
   <img id="foto-bilqis" src="bilqis.png" alt="Bilqis" style="width: 75%; max-width: 400px; margin-bottom: 20px; border-radius: 16px; z-index: 1; position: relative;">
-  <canvas id="kembang-api" width="225" height="281.25" style="position: absolute; left: 45px; top: 0; pointer-events: none; z-index: 2;"></canvas>
-  <img src="https://media.giphy.com/media/xzJournBeerRRGJgpg/giphy.gif" alt="ultah" style="position: absolute; width: 65%; margin-bottom: 20px; z-index:3 ; top:135px ;">
+  <canvas id="kembang-api" width="225" height="281.25" style="position: absolute; left: 25px; top: 0; pointer-events: none; z-index: 2;"></canvas>
+  <img src="https://media.giphy.com/media/xzJournBeerRRGJgpg/giphy.gif" alt="ultah" style="position: absolute; width: 65%; margin-bottom: 20px; z-index:3 ; top:150px ;">
 </div>
   <p>Semoga hari kamu menyenangkan dan penuh kebahagiaan 🎉</p>
   <button id="lanjut">lanjut</button>
@@ -116,7 +116,9 @@ function showBirthdayMessage(namaValue) {
     }
 
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255,255,255,0.05)"; // sangat tipis, jejak tetap ada, foto tetap terlihat
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
       fireworks.forEach((fw) => {
         fw.update();
         fw.draw(ctx);
@@ -126,9 +128,9 @@ function showBirthdayMessage(namaValue) {
     }
 
     // Munculkan kembang api secara acak di atas setiap 1 detik
-    setInterval(spawnFireworkRandomTop, 1500);
+    setInterval(spawnFireworkRandomTop, 2000);
     animate();
-    setInterval(spawnFireworkRandomTop, 1000);
+    setInterval(spawnFireworkRandomTop, 1500);
     animate();
     // Event tombol lanjut
     document.getElementById("lanjut").addEventListener("click", function () {

@@ -39,7 +39,6 @@ p {
   animation: fade-in 0.75s ease-in-out forwards;
 }
 .foto {
-  /* background-color: black; */
   position:relative;
   display:flex;
   justify-content:center;

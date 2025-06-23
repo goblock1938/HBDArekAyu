@@ -116,7 +116,7 @@ function showBirthdayMessage(namaValue) {
     }
 
     function animate() {
-      ctx.fillStyle = "rgba(255,255,255,0.05)"; // sangat tipis, jejak tetap ada, foto tetap terlihat
+      ctx.fillStyle = "rgba(255,255,255,0.25)"; // sangat tipis, jejak tetap ada, foto tetap terlihat
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       fireworks.forEach((fw) => {

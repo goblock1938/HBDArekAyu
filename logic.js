@@ -63,7 +63,6 @@ function showBirthdayMessage(namaValue) {
       ];
       return colors[Math.floor(Math.random() * colors.length)];
     }
-
     function Firework(x, y) {
       this.x = x;
       this.y = y;
@@ -146,7 +145,7 @@ function showBirthdayMessage(namaValue) {
           const html4 = `
         <h3>makasih ya, semoga kita dipertemukan kembali, ${namaValue}!</h3>
         <img src="https://media.giphy.com/media/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Thank You" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
-        <p>aku disini memang rindu sama kamu, tapi setidaknya aku sudah tidak mencarimu karena aku takut mengganggu kamu<br>semangat kuliahnya😇</p>
+        <p>Aku disini hanya mau ngucapin makasih atas semua kenangan yang udah pernah kita buat bersama walaupun hanya sebatas teman<br>dan juga aku mau minta maaf atas apapun kesalahan yang pernah aku buat, mulai dari bikin kamu marah, gk enak hati, telat respon, gk bisa banyak bantu dan banyak hal lainnya<br>jadi maafin aku ya😇</p>
         <button id='kado'>terakhir nich</button>
         `;
           container.innerHTML = html4;
@@ -182,7 +181,7 @@ function showBirthdayMessage(namaValue) {
             <img src="https://media.giphy.com/media/9Y1LEFKsbbP4hrLgV3/giphy.gif" alt="Terima Kado" style="width: 50%; max-width: 400px; margin-bottom: 20px;">
             <p>kalo kerumah kamu pastinya kamu ngelarang sih, jadi aku maunya ketemuan, btw ketemuan dimana nih hehe<br>
             webnya bakal hilang sendiri dalam waktu 15 detik<br>
-            semoga kamu suka, <br>💕Love You❤️</p>
+            semoga kamu suka, <br>💕Love You, anak teknik❤️</p>
             `;
                   container.innerHTML = html6;
                   const nomor = "6282132116116";
